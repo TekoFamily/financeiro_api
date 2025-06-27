@@ -1,16 +1,12 @@
-import express from 'express'; 
-import cors from 'cors';
+import express from 'express'
+import cors from 'cors'
 
-import { PrismaClient } from './generated/prisma/index.js';
+export const app = express()
 
-const prisma = new PrismaClient()
+app.use(cors())
+app.use(express.json())
 
-
-const app = express();
-app.use(cors()); // Adicione esta linha
-app.use(express.json()); //garante que a gnte vai usar o json no body das requisicoes
-
-
+/*
 
 //-------------------------------------------------------------------------------------------------------------------------//
 
@@ -169,20 +165,10 @@ app.get('/usuarios', async (req, res) => {
 })
 
 
-
+*/
 
 //-------------------------------------------------------------------------------------------------------------------------//
 
 
 
 
-
-//passo a porta que o servidor vai escutar
- 
-app.listen(3000)
-console.log('Servidor rodando na porta 3000');
-
-//para rodar o servidor, use o comando: node server.js
-    
-
-// na rota post crio o usuario e na rota get consigo pegar todos os usuarios que foram criados
